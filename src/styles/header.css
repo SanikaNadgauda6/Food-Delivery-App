@@ -29,14 +29,14 @@
   text-align: center;
 }
 
-.logo:hover {
+/* .logo:hover {
   cursor: pointer;
-}
+} */
 
 .logo img {
-  width: calc(100% - 60%);
+  width: calc(100% - 75%);
   object-fit: contain;
-  margin-top: -40px;
+  /* margin-top: -40px; */
 }
 
 .logo h5 {
@@ -55,22 +55,25 @@
 }
 
 .menu a:hover {
-  color: #df2020;
+  /* color: #fa902a; red */
+  color: #fa902a; /* orange */
+  /* #aa1d25 logo red */
 }
 
 .active__menu {
-  color: #df2020 !important;
+  color: #fa902a !important;
 }
 
 .cart__icon {
   position: relative;
+  cursor: pointer;
 }
 
 .cart__badge {
   position: absolute;
   top: 30px;
   right: -10px;
-  background: #df2020;
+  background: #fa902a;
   color: #fff;
   width: 15px;
   height: 15px;

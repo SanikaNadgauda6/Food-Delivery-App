@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const items =
   localStorage.getItem("cartItems") !== null
@@ -30,7 +31,6 @@ const initialState = {
 const cartSlice = createSlice({
   name: "cart",
   initialState,
-
   
   reducers: {
     // =========== add item ============
@@ -52,10 +52,12 @@ const cartSlice = createSlice({
           extraIngredients: newItem.extraIngredients
         });
         state.totalQuantity++;
-
+        toast.success("Item Added Successfully!!!");
+        
       } else if(existingItem && (JSON.stringify(existingItem.extraIngredients) === JSON.stringify(extraIngredients)))  {
         state.totalQuantity++;
         existingItem.quantity++;
+        toast.success("Item Already exists! Count increased!");
       } else {
 
         const value = JSON.parse(localStorage.getItem("cartItems"));
@@ -74,8 +76,9 @@ const cartSlice = createSlice({
           (total, item) => total + Number(item.quantity),
           0
         );
+        toast.success("Item added to the cart Successfully!");
+
       }
-     
       state.totalAmount = state.cartItems.reduce(
         (total, item) => total + Number(item.price) * Number(item.quantity),
         0

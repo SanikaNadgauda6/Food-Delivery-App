@@ -7,6 +7,8 @@ import "../../../styles/cart-item.css";
 import { useDispatch } from "react-redux";
 import { cartActions } from "../../../store/shopping-cart/cartSlice";
 
+
+//this is displaying the cart item
 const CartItem = ({ item, onClose }) => {
   const { id, title, price, image01, quantity, extraIngredients } = item;
   let navigate = useNavigate(); 

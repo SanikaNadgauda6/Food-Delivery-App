@@ -1,7 +1,9 @@
+import { toast } from "react-toastify";
 import "../styles/checkout.css";
 import { AiFillCheckCircle } from "react-icons/ai";
 
 const Checkout = () => {
+  toast.success("Order Placed Successfully");
   return (
     <>
       <div className="checkoutMessage">

@@ -1,7 +1,7 @@
 import React from "react";
 import { ListGroup } from "reactstrap";
 
-import logo from "../../assets/images/res-logo.png";
+import logo from "../../assets/images/Logo3.png";
 import "../../styles/footer.css";
 
 const Footer = () => {
@@ -9,7 +9,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__logo">
         <img src={logo} alt="logo" />
-        <h5>Testy Treat</h5>
+        {/* <h5>Quick Bite</h5> */}
         <p>Best Pizzas in town, try it out!</p>
       </div>
       <div>

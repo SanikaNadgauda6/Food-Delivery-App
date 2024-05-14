@@ -14,6 +14,7 @@ import "../styles/product-details.css";
 import "../styles/product-card.css";
 
 import ProductCard from "../components/UI/product-card/ProductCard";
+import { toast } from "react-toastify";
 
 const ExtraIngredients = {
 	MUSHROOMS: "Mushrooms",
@@ -38,13 +39,16 @@ const PizzaDetails = () => {
   const { title, price, category, desc, image01 } = product;
   const relatedProduct = products.filter((item) => category === item.category);
 
-  
+  // console.log(product);
   useEffect(() => {
     const existingPizza = cartProducts.find(item => item.id === id);
+    // console.log("itemid & id", id, existingPizza);
     if(existingPizza) {
       setExtraIngredients(existingPizza.extraIngredients);
+      toast.success("Updated Item Successfully");
     } else {
       setExtraIngredients([]);
+      // toast.success("Item Added Successfullyyyyy");
     }
   }, [cartProducts, id]);
 
@@ -82,15 +86,7 @@ const PizzaDetails = () => {
 
   return (
     <Helmet title="Product-details">
-      {isUpdateNotificationDisplayed && (
-        <div className="updateCartNotifiation">
-          <span>You successfully updated your cart!</span>
-        </div>
-      )
-      }
-
       <CommonSection title={title} />
-
       <section>
         <Container>
           <Row>
@@ -143,11 +139,14 @@ const PizzaDetails = () => {
 
             <Col lg='12'>
               <div className="extraIngredientsGrid">
-                {(Object.values(ExtraIngredients)).map((ingredient) => {
-                  return (
-                    <ExtraIngredient isChecked={extraIngredients.includes(ingredient)}  key={ingredient} onSelect={ingredient => updateExtraIngredients(ingredient)} ingredient={ingredient}></ExtraIngredient>
-                  )
-                })}
+              {extraIngredients && (Object.values(ExtraIngredients)).map((ingredient) => {
+                return (
+                  <ExtraIngredient isChecked={extraIngredients.includes(ingredient)}  key={ingredient} onSelect={ingredient => updateExtraIngredients(ingredient)} ingredient={ingredient}>
+                    
+                  </ExtraIngredient>
+                )
+              })}
+
               </div>
             </Col>
 

@@ -6,6 +6,8 @@ import Pizzas from "../pages/Pizzas";
 import PizzaDetails from "../pages/PizzaDetails";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
+import { Notfound } from "../pages/error";
+import { Contact } from "../pages/contact";
 
 const Routers = () => {
   return (
@@ -15,7 +17,9 @@ const Routers = () => {
       <Route path="/pizzas" element={<Pizzas />} />
       <Route path="/cart" element={<Cart />} />
       <Route path="/checkout" element={<Checkout />} />
+      <Route path="/contact" element={<Contact />} />
       <Route path="/pizzas/:id" element={<PizzaDetails />} />
+      <Route path="*" element={<Notfound />} />
     </Routes>
   );
 };

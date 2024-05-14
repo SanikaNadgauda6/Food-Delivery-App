@@ -5,6 +5,7 @@ import "../../../styles/common-section.css";
 const CommonSection = (props) => {
   return (
     <section className="common__section">
+      {/* single page banner titles */}
       <Container>
         <h2 className="text-white">{props.title}</h2>
       </Container>

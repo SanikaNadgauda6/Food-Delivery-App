@@ -2,11 +2,14 @@ import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import { Container } from "reactstrap";
-import logo from "../../assets/images/res-logo.png";
+import logo from "../../assets/images/Logo3.png";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import { cartUiActions } from "../../store/shopping-cart/cartUiSlice";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { fak } from '@awesome.me/kit-KIT_CODE/icons';
 
 import "../../styles/header.css";
 
@@ -65,7 +68,7 @@ const Header = () => {
         <div className="nav__wrapper d-flex align-items-center justify-content-between">
           <div className="logo" onClick={() => navigate("/home")}>
             <img src={logo} alt="logo" />
-            <h5>Tasty Treat</h5>
+            {/* <h5>Quick Bite</h5> */}
           </div>
           {/* ======= menu ======= */}
           <div className="navigation" ref={menuRef} onClick={toggleMenu}>
@@ -97,7 +100,8 @@ const Header = () => {
           <div className="nav__right d-flex align-items-center gap-4">
             <span className="cart__icon" onClick={toggleCart}>
               <i className="ri-shopping-basket-line"></i>
-              <span className="cart__badge">{totalQuantity}</span>
+              <FontAwesomeIcon icon="fa-solid fa-cart-shopping" className="cart__badge"/>{totalQuantity}
+              {/* <span className="cart__badge">{totalQuantity}</span> */}
             </span>
             
             <span className="mobile__menu" onClick={toggleMenu}>

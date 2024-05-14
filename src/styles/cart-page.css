@@ -10,9 +10,9 @@ th {
   width: 100%;
 }
 
-.cart__item-del i {
+/* .cart__item-del i {
   cursor: pointer;
-}
+} */
 
 .cart__page-btn {
   display: flex;
@@ -25,14 +25,14 @@ th {
 }
 
 .cart__subtotal {
-  color: #df2020;
+  color: #fa902a;
   font-size: 1.5rem;
 }
 
 .addTOCart__btn {
   border: none;
   padding: 7px 25px;
-  background: #df2020;
+  background: #fa902a;
   color: #fff;
   border-radius: 5px;
   font-size: 0.9rem;

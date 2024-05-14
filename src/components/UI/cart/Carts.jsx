@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { cartUiActions } from "../../../store/shopping-cart/cartUiSlice";
 
 import "../../../styles/shopping-cart.css";
-
+//this is displaying the cart 
 const Carts = () => {
   const dispatch = useDispatch();
   const cartProducts = useSelector((state) => state.cart.cartItems);
